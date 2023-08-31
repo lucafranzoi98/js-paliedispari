@@ -7,11 +7,16 @@
 </head>
 <body>
    
-   <form>
-      <input type="radio" name="even-odd" id="even-radio" value="true">
-      <label for="even">Pari</label>
-      <input type="radio" name="even-odd" id="odd-radio" value="false">
-      <label for="odd">Dispari</label>
+   <form id="even-form">
+      <label>
+         <input type="radio" name="even-odd" id="even-radio" value="even" checked="check">
+         Pari
+      </label>
+
+      <label>
+         <input type="radio" name="even-odd" id="odd-radio" value="odd">
+         Dispari
+      </label>
 
       <br>
       <br>
@@ -23,9 +28,12 @@
       <br>
       <br>
 
-      <button id="button-even">Calcola</button>
-      
+      <input type="submit" value="Gioca" id="button-even">
+
+      <div id="result-even"></div>
+
    </form>
+
    <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 </html>
