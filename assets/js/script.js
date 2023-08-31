@@ -52,13 +52,13 @@ buttonEvenEl.addEventListener("click", function(e){
       const totalSum = sum(inputUserEl, pcNumber);
       const result = isEven(totalSum);
 
-      resultEl.innerHTML = `<br> <div>Il tuo numero: ${inputUserEl}</div> <div>Il numero del computer: ${pcNumber}</div> <div>La somma dei due numeri è: ${totalSum}</div>`
+      resultEl.innerHTML = `<div class="mt-3">Il tuo numero: ${inputUserEl}</div> <div>Il numero del computer: ${pcNumber}</div> <div>La somma dei due numeri è: ${totalSum}</div>`
 
       if (radioEl) {
          resultEl.innerHTML += (result ? `<div>Hai vinto!</div>` : `<div>Hai perso :(</div>`);
       } else {
          resultEl.innerHTML += (result ? `<div>Hai perso :(</div>` : `<div>Hai vinto!</div>`);
-      }  
+      }
    }   
 
    e.preventDefault();
@@ -74,11 +74,14 @@ buttonPaliEl.addEventListener("click", function(e){
    resulPaliEl.innerHTML = "";
 
    const letters = [];
-   const textInputEl = document.getElementById("text-input").value;
+   const textInputEl = document.getElementById("text-input").value.toLowerCase();
    const numberLetters = textInputEl.length;
+   const alphabet = /^[a-z]+$/;
 
-   // Verifico che la parola sia lunga almeno 2 lettere
-   if (numberLetters > 1) {
+   console.log(textInputEl);
+
+   // Verifico che la parola sia lunga almeno 2 lettere e che sia effettivamente una parola
+   if (numberLetters > 1 && textInputEl.match(alphabet)) {
       
       // Faccio un ciclo for lungo tanto quanto il numero delle lettere della parola e le pusho una ad una in un array
 
@@ -101,13 +104,13 @@ buttonPaliEl.addEventListener("click", function(e){
       }
 
       if (pali) {
-         resulPaliEl.innerHTML = `<div>La parola è palindroma!</div>`;
+         resulPaliEl.innerHTML = `<div class="mt-3">La parola è palindroma!</div>`;
       } else {
-         resulPaliEl.innerHTML = `<div>La parola NON è palindroma!</div>`;
-      } 
+         resulPaliEl.innerHTML = `<div class="mt-3">La parola NON è palindroma!</div>`;
+      }
 
    } else {
-      alert("Inserisci una parola lunga almeno 2 lettere!")
+      alert("Inserisci una parola lunga almeno 2 lettere senza caratteri o numeri!");
    }
 
     
