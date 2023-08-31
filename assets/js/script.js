@@ -62,7 +62,26 @@ buttonEvenEl.addEventListener("click", function(e){
    }   
 
    e.preventDefault();
-})
+});
 
 
+//Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma
+
+const letters = [];
+const buttonPaliEl = document.getElementById("button-pali");
+
+buttonPaliEl.addEventListener("click", function(e){
+   const textInputEl = document.getElementById("text-input").value;
+   const numberLetters = textInputEl.length;
+
+   for (let i = 0; i < numberLetters; i++) {
+      const letter = textInputEl[i];
+      letters.push(letter);
+   }
+
+   console.log(letters);
+   
+
+   e.preventDefault();
+});
 
