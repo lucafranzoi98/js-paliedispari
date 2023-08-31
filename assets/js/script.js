@@ -67,16 +67,39 @@ buttonEvenEl.addEventListener("click", function(e){
 
 //Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma
 
-const letters = [];
 const buttonPaliEl = document.getElementById("button-pali");
+const resulPaliEl = document.getElementById("result-pali");
 
 buttonPaliEl.addEventListener("click", function(e){
+   resulPaliEl.innerHTML = "";
+
+   const letters = [];
    const textInputEl = document.getElementById("text-input").value;
    const numberLetters = textInputEl.length;
 
    for (let i = 0; i < numberLetters; i++) {
       const letter = textInputEl[i];
       letters.push(letter);
+   }
+
+   if (letters.length % 2 === 0) {
+      let pali = true;
+      for (let i = 0; i < (letters.length / 2); i++) {
+         if (letters[i] === letters[letters.length - 1 - i]) {
+            
+         } else {
+            pali = false;
+         }
+      }
+
+      if (pali) {
+         resulPaliEl.innerHTML = `<div>La parola è palindroma!</div>`;
+      } else {
+         resulPaliEl.innerHTML = `<div>La parola NON è palindroma!</div>`;
+      }
+
+   } else {
+      console.log("Lettere dispari");
    }
 
    console.log(letters);
