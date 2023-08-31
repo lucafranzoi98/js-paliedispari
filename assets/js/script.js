@@ -77,12 +77,15 @@ buttonPaliEl.addEventListener("click", function(e){
    const textInputEl = document.getElementById("text-input").value;
    const numberLetters = textInputEl.length;
 
-   // Faccio un ciclo for lungo tanto quanto il numero delle lettere della parola e le pusho una ad una in un array
+   // Verifico che la parola sia lunga almeno 2 lettere
+   if (numberLetters > 1) {
+      
+      // Faccio un ciclo for lungo tanto quanto il numero delle lettere della parola e le pusho una ad una in un array
 
-   for (let i = 0; i < numberLetters; i++) {
-      const letter = textInputEl[i];
-      letters.push(letter);
-   }
+      for (let i = 0; i < numberLetters; i++) {
+         const letter = textInputEl[i];
+         letters.push(letter);
+      }
 
       // Per verificare se una parola è palindroma verifico se la prima lettera è uguale all'ultima, la seconda alla penultima, ecc. con un ciclo lungo la lunghezza della parola.
       //Esempio: parola ANNA
@@ -101,7 +104,13 @@ buttonPaliEl.addEventListener("click", function(e){
          resulPaliEl.innerHTML = `<div>La parola è palindroma!</div>`;
       } else {
          resulPaliEl.innerHTML = `<div>La parola NON è palindroma!</div>`;
-      }   
+      } 
+
+   } else {
+      alert("Inserisci una parola lunga almeno 2 lettere!")
+   }
+
+    
 
    e.preventDefault();
 });

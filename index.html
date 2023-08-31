@@ -4,10 +4,14 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Pali e dispari</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
-<body>
+<body class="d-flex justify-content-around bg-body-secondary p-5 gap-5">
    
-   <form id="even-form">
+   
+   <form id="even-form" class="bg-white p-3 rounded-3 h-100">
+      <h3>Pari o dispari</h3>
+      
       <label>
          <input type="radio" name="even-odd" id="even-radio" value="even" checked="check">
          Pari
@@ -18,15 +22,10 @@
          Dispari
       </label>
 
-      <br>
-      <br>
-
-      <label for="input-user">Inserisci un numero da 1 a 5</label>
-      <br>
-      <input type="number" name="number" id="input-user">
-
-      <br>
-      <br>
+      <div class="my-3">
+         <label for="input-user">Inserisci un numero da 1 a 5</label>
+         <input type="number" name="number" id="input-user">
+      </div>
 
       <input type="submit" value="Gioca" id="button-even">
 
@@ -34,11 +33,8 @@
 
    </form>
 
-   <br>
-   <br>
-   <br>
-
-   <form>
+   <form class="bg-white p-3 rounded-3 h-100">
+      <h3>Pali or not Pali?</h3>
       <label for="text-input">Verifica se la parola è palindroma:</label>
       <br>
       <input type="text" name="text-input" id="text-input">
@@ -48,7 +44,7 @@
       <div id="result-pali"></div>
    </form>
    
-
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
    <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 </html>
